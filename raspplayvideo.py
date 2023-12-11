@@ -3,6 +3,8 @@ import subprocess
 import RPi.GPIO as GPIO
 import time
 
+import vlc 
+
 led = 18
 switch = 37
 
@@ -14,24 +16,19 @@ time.sleep(0.2);
 
 print('Switch status = ', GPIO.input(switch))
 
-time.sleep(20);#ola
+while 1:
+    while GPIO.input(switch) == 1:
+        time.sleep(0.2);
+        print('Switch status = ', GPIO.input(switch))
+    else:
+        print('Vou tocar o filme')
 
-subprocess.run(["sudo /usr/bin/fbi", "-d /dev/fb0  -T 1 -noverbose -a -t 5 /home/pi/RaspPlayVideo/blackimage.jpeg"]) 
+        result = subprocess.run(["vlc RaspPlayVideo/Sample.mp4 vlc://quit"], shell=True, capture_output=True, text=True)
 
-while GPIO.input(switch) == 1:
-    time.sleep(0.2);
-    print('Switch status = ', GPIO.input(switch))
-else:
-    print('Vou tocar o filme')
-    subprocess.run(["vlc", "filme.mp4"]) 
-    print('o filme acabou')
+        print(result.stdout)
 
-for i in range(10):
-    GPIO.output(led, GPIO.HIGH)
-    time.sleep(0.2)
-    GPIO.output(led, GPIO.LOW)
-    time.sleep(0.2)
-    print('Switch status = ', GPIO.input(switch))
+        print('o filme acabou')
+
 
 GPIO.cleanup()
 
