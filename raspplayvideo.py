@@ -14,7 +14,9 @@ time.sleep(0.2);
 
 print('Switch status = ', GPIO.input(switch))
 
-#subprocess.run(["fbi", "-a --noverbose -T 1 natal.jpg"]) 
+time.sleep(20);#ola
+
+subprocess.run(["sudo /usr/bin/fbi", "-d /dev/fb0  -T 1 -noverbose -a -t 5 /home/pi/RaspPlayVideo/blackimage.jpeg"]) 
 
 while GPIO.input(switch) == 1:
     time.sleep(0.2);
