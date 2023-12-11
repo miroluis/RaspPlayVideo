@@ -23,7 +23,7 @@ while 1:
     else:
         print('Vou tocar o filme')
 
-        result = subprocess.run(["vlc RaspPlayVideo/filme.mp4 vlc://quit"], shell=True, capture_output=True, text=True)
+        result = subprocess.run(["vlc filme.mp4 vlc://quit"], shell=True, capture_output=True, text=True)
 
         print(result.stdout)
 
