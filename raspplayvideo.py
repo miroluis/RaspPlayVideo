@@ -3,7 +3,7 @@ import subprocess
 import RPi.GPIO as GPIO
 import time
 
-import vlc 
+#import vlc 
 
 led = 18
 switch = 37
