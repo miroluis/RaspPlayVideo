@@ -7,7 +7,9 @@ sudo nano /etc/rc.local
 
 	teste 2
 
+sudo /usr/bin/fbi  -d /dev/fb0  -T 1 -noverbose -a -t 5 /home/pi/RaspPlayVideo/blackimage.jpeg &
 
+python3 /home/pi/RaspPlayVideo/b_raspplayvideo.py
 
 
 **Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
