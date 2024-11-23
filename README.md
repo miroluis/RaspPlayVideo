@@ -13,6 +13,9 @@ sudo nano /etc/rc.local
 
 	teste 2
 
+no nano ~/bashrc
+colocar
+
 sudo /usr/bin/fbi  -d /dev/fb0  -T 1 -noverbose -a -t 5 /home/pi/RaspPlayVideo/blackimage.jpeg &
 
 python3 /home/pi/RaspPlayVideo/b_raspplayvideo.py
