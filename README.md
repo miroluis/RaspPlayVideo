@@ -1,6 +1,12 @@
 **RaspPlayVideo**
 
+instalar a versão Raspberry Pi OS (64bit) 1,2Gb com desktop
+
+
 instalar o fbi
+Sudo apt install fbi
+
+
 fazer git clone do raspplayvideo
 sudo nano /etc/rc.local
 	sudo python /home/pi/sample.py &
